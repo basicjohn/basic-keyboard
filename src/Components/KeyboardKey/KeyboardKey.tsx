@@ -6,7 +6,7 @@ import styles from "./KeyboardKey.module.scss";
 
 
 interface KeyProps {
-  u: 1 | number;
+  u: number;
   value: string;
   type?: "shift" | "space" | string ;
   onKeyClick?: () => void;
@@ -21,9 +21,9 @@ const Key = (props: KeyProps) => {
   return (
     <button 
       style={{
-        width: `${u}em`,
+        width: `${u * 4}em`,
       }}
-      className={keyClasses}
+      className={styles[keyClasses]}
       onClick={onKeyClick}
     >
       <div >{value}</div>
