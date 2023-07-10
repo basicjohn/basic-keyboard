@@ -3,10 +3,10 @@
 import KeyboardKey from "Components/KeyboardKey/KeyboardKey";
 
 // styles
-import styles from "./Home.module.scss";
+import styles from "./Keyboard.module.scss";
 import CurrentWeather from "Components/CurrentWeather/CurrentWeather";
 
-const rootClass = "home-page";
+const rootClass = "Keyboard";
 
 const keyboardRows = [
   [
@@ -99,10 +99,10 @@ const keyboardRows = [
   
 ]
 
-const Home = () => {
+const Keyboard = () => {
   CurrentWeather();
   return (
-    <>
+    <div className={styles[rootClass]}>
     {keyboardRows.map((row, index) => {
       return (
         <div className={styles["keyboard-row"]} key={index}>
@@ -120,8 +120,8 @@ const Home = () => {
       );
         })
     }
-    </>
+    </div>
   );
 };
 
-export default Home;
+export default Keyboard;
