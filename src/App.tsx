@@ -11,28 +11,29 @@ import "./App.scss";
 
 const App = () => {
   const [value, setValue] = React.useState("");
+  const [shift, setShift] = React.useState(true);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // const handleKeyboardEvent = (event: KeyboardEvent) => {
-  //   const { key } = event;
-  //   if (key === "backspace") {
-  //     setValue(value.slice(0, -1));
-  //   } else if (key.length === 1) {  // Ignore special keys like Shift, Alt, etc.
-  //     setValue(value + key);
-  //   }
-  // };
 
-    
-
-  const handleKeyPress = (character: string) => {
+  const writeCharacter = (character: string) => {
     setValue(value + character);
+    setShift(false);
     // Re-focus on the input element after button press
     inputRef.current?.focus();
   };
 
-  const handleButtonMouseDown = (character: string) => {
+  const modifyCharacter = (character: string) => {
+    setShift(!shift);
+  };
 
-    handleKeyPress(character);
+  const deleteCharacter = () => {
+    setValue(value.slice(0, -1));
+    inputRef.current?.focus();
+  };
+
+
+  const handleKeyboardEvent = (character: string) => {
+    shift ? writeCharacter(character.toUpperCase()) : writeCharacter(character)
   };
 
 
@@ -40,8 +41,8 @@ const App = () => {
   return (
     <div className="app">
       <Container>
-        <input type="text" value={value} ref={inputRef} />
-        <Keyboard onKeyClick={handleButtonMouseDown} />
+        <input className="input-field" type="text" value={value} ref={inputRef} />
+        <Keyboard onKeyClick={handleKeyboardEvent} />
 
       </Container>
     </div>
