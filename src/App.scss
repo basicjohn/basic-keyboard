@@ -1,9 +1,16 @@
 .app {
     width: 100%;
+    padding: 1em 0;
+    .input-field {
+        width: 80%;
+        padding: .5em;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        margin-bottom: 2em;
+        font-size: .75em;
+    }
 }
 
-.input-field {
-    width:100%;
-    padding: .5em;
-    margin-bottom: 2em;
-}

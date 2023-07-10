@@ -6,7 +6,7 @@ import KeyboardKey from "Components/KeyboardKey/KeyboardKey";
 import styles from "./Keyboard.module.scss";
 
 // data
-import standard from "./../../data/keyboard_library/standard.json";
+import mobile from "./../../data/keyboard_library/mobile.json";
 
 const rootClass = "Keyboard";
 
@@ -14,7 +14,7 @@ interface KeyboardProps {
   onKeyClick: (value: string) => void;
 }
 
-const keyboardRows = standard;
+const keyboardRows = mobile;
 
 const Keyboard = (props: KeyboardProps) => {
   return (
