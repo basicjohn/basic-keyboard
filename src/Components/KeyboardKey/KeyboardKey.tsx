@@ -9,7 +9,7 @@ interface KeyProps {
   u: number;
   value: string;
   type?: "shift" | "space" | string ;
-  onKeyClick?: () => void;
+  onKeyClick?: (value: string) => void;
 }
 
 
@@ -24,7 +24,7 @@ const Key = (props: KeyProps) => {
         width: `${u * 4}em`,
       }}
       className={styles[keyClasses]}
-      onClick={onKeyClick}
+      onMouseDown={(e) => onKeyClick && onKeyClick(value)}
     >
       <div >{value}</div>
     </button>

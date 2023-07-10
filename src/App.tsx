@@ -1,24 +1,47 @@
 // dependencies
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useRef } from "react";
 import { Container } from "@mui/material";
 
-// pages
-import Home from "Patterns/Keyboard/Keyboard";
+// patterns
+import Keyboard from "Patterns/Keyboard/Keyboard";
+
 
 // styles
 import "./App.scss";
-import Keyboard from "Patterns/Keyboard/Keyboard";
 
 const App = () => {
+  const [value, setValue] = React.useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // const handleKeyboardEvent = (event: KeyboardEvent) => {
+  //   const { key } = event;
+  //   if (key === "backspace") {
+  //     setValue(value.slice(0, -1));
+  //   } else if (key.length === 1) {  // Ignore special keys like Shift, Alt, etc.
+  //     setValue(value + key);
+  //   }
+  // };
+
+    
+
+  const handleKeyPress = (character: string) => {
+    setValue(value + character);
+    // Re-focus on the input element after button press
+    inputRef.current?.focus();
+  };
+
+  const handleButtonMouseDown = (character: string) => {
+
+    handleKeyPress(character);
+  };
+
+
+
   return (
     <div className="app">
       <Container>
-        <Keyboard />
-      {/* <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<Home />} />
-      </Routes> */}
+        <input type="text" value={value} ref={inputRef} />
+        <Keyboard onKeyClick={handleButtonMouseDown} />
 
       </Container>
     </div>
