@@ -1,6 +1,7 @@
 // dependencies
-import React, { useRef } from "react";
+import React, { useRef, createContext, useContext, useState } from "react";
 import { Container } from "@mui/material";
+
 
 // patterns
 import Keyboard from "Patterns/Keyboard/Keyboard";
@@ -9,9 +10,11 @@ import Keyboard from "Patterns/Keyboard/Keyboard";
 // styles
 import "./App.scss";
 
+const InputContext = createContext({});
+
 const App = () => {
-  const [value, setValue] = React.useState("");
-  const [shift, setShift] = React.useState(true);
+  const [value, setValue] = useState("");
+  const [shift, setShift] = useState(true);
   const inputRef = useRef<HTMLInputElement>(null);
 
 
@@ -39,6 +42,8 @@ const App = () => {
 
 
   return (
+    <InputContext.Provider value={{input: value,
+    shift: shift}}>
     <div className="app">
       <Container>
         <input className="input-field" type="text" value={value} ref={inputRef} />
@@ -46,6 +51,7 @@ const App = () => {
 
       </Container>
     </div>
+    </InputContext.Provider>
   );
 };
 
