@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 
 interface InitialKeyboardStateTypes {
-  inputValue: string;
+  message: string;
   shift: boolean;
 }
 interface KeyboardContextTypes extends InitialKeyboardStateTypes {
@@ -11,11 +11,11 @@ interface KeyboardContextTypes extends InitialKeyboardStateTypes {
 const KeyboardContext = React.createContext({} as KeyboardContextTypes);
 
 const ContextProvider = ({ children }: any) => {
-  const [inputValue, setInputValue] = useState("");
+  const [message, setMessage] = useState("");
   const [shift, setShift] = useState(true); 
 
   const writeCharacter = (character: string) => {
-    setInputValue(inputValue + character);
+    setMessage(message + character);
     setShift(false);
   };
 
@@ -24,7 +24,7 @@ const ContextProvider = ({ children }: any) => {
   };
 
   const deleteCharacter = () => {
-    setInputValue(inputValue.slice(0, -1));
+    setMessage(message.slice(0, -1));
 
   };
 
@@ -35,7 +35,7 @@ const ContextProvider = ({ children }: any) => {
   return (
     <KeyboardContext.Provider
       value={
-        { inputValue, shift } as KeyboardContextTypes
+        { message, shift } as KeyboardContextTypes
       }
     >
       {children}
