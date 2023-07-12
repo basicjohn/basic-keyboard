@@ -1,32 +1,41 @@
-// dependencies
+import React, { useState } from 'react';
 import classNames from 'classnames';
-
-// styles
 import styles from "./KeyboardKey.module.scss";
-
 
 interface KeyProps {
   u: number;
   value: string;
-  type?: "shift" | "space" | string ;
+  type?: "shift" | "space" | string;
   onKeyClick?: (value: string) => void;
 }
 
-
 const Key = (props: KeyProps) => {
   const { u, value, type, onKeyClick } = props;
-  const keyClasses = classNames('key', type);
+  const [isActive, setIsActive] = useState(false);
 
+  const keyClasses = classNames(styles.key, styles[`key__${type}`], {
+    [styles['key--active']]: isActive,
+  });
+  
+
+  const handleMouseDown = () => {
+    onKeyClick && onKeyClick(value);
+    setIsActive(true);
+  }
+
+  const handleMouseUp = () => {
+    setIsActive(false);
+  }
 
   return (
     <button 
-      style={{
-        width: `${u * 4}em`,
-      }}
-      className={styles[keyClasses]}
-      onMouseDown={(e) => onKeyClick && onKeyClick(value)}
+      style={{ width: `${u * 4}em` }}
+      className={keyClasses}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
     >
-      <div >{value}</div>
+      <div>{value}</div>
     </button>
   );
 };

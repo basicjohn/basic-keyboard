@@ -10,13 +10,13 @@ import mobile from "./../../data/keyboard_library/mobile.json";
 
 const rootClass = "Keyboard";
 
-interface KeyboardProps {
-  onKeyClick: (value: string) => void;
-}
+// interface KeyboardProps {
+//   onKeyClick: (value: string) => void;
+// }
 
 const keyboardRows = mobile;
 
-const Keyboard = (props: KeyboardProps) => {
+const Keyboard = () => {
   return (
     <div className={styles[rootClass]}>
     {keyboardRows.map((row, index) => {
@@ -28,7 +28,7 @@ const Keyboard = (props: KeyboardProps) => {
                 key={index}
                 u={key.u}
                 value={key.value}
-                onKeyClick={() => props.onKeyClick(key.value)}
+                // onKeyClick={() => props.onKeyClick(key.value)}
               />
             );
           })}

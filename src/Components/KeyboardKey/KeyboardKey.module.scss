@@ -1,17 +1,31 @@
 .key {
-    height: 3.5em;
-    padding: 0.2em;
-    margin: 0.2em 0.2em;
-    box-sizing: border-box;
-    font-size: 0.6em;
+    position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
-    border-radius: 0.1em;
-    border: 1px solid black;
-    background-color: #FFFFFF;
-    div {
-        height: 1em;
-
+    justify-content: center;
+    width: 3em;
+    height: 3em;
+    margin: 0.4em;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    padding: 0.2em;
+    font-size: 0.8em;
+    user-select: none;
+    transition: all 0.2s ease;
+  
+    &:active {
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      top: 2px;
     }
-}
+    
+    &.key__shift, &.key__space {
+      width: 6em;
+    }
+    
+    &.key--active {
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      top: 2px;
+    }
+  }
