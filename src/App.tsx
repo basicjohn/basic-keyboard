@@ -21,7 +21,7 @@ const App = () => {
     <ContextProvider>
     <div className="app">
       <Container>
-        <input className="input-field" type="text" value={KeyboardContext.inputValue} ref={inputRef} />
+        <input className="input-field" type="text" value={KeyboardContext.message} ref={inputRef} />
         <Keyboard />
 
       </Container>

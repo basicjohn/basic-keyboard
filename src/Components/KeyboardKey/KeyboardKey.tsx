@@ -3,14 +3,14 @@ import classNames from 'classnames';
 import styles from "./KeyboardKey.module.scss";
 
 interface KeyProps {
-  u: number;
-  value: string;
+  unit: number;
+  primary: string;
+  secondary?: string;
   type?: "shift" | "space" | string;
-  onKeyClick?: (value: string) => void;
+  // onKeyClick?: (primary: string) => void;
 }
 
-const Key = (props: KeyProps) => {
-  const { u, value, type, onKeyClick } = props;
+const Key = ({ unit, primary, secondary, type } : KeyProps) => {
   const [isActive, setIsActive] = useState(false);
 
   const keyClasses = classNames(styles.key, styles[`key__${type}`], {
@@ -19,7 +19,7 @@ const Key = (props: KeyProps) => {
   
 
   const handleMouseDown = () => {
-    onKeyClick && onKeyClick(value);
+    // onKeyClick && onKeyClick(primary);
     setIsActive(true);
   }
 
@@ -29,13 +29,13 @@ const Key = (props: KeyProps) => {
 
   return (
     <button 
-      style={{ width: `${u * 4}em` }}
+      style={{ width: `${unit * 4}em` }}
       className={keyClasses}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
     >
-      <div>{value}</div>
+      <div>{primary}</div>
     </button>
   );
 };

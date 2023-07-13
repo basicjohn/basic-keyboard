@@ -26,8 +26,8 @@ const Keyboard = () => {
             return (
               <KeyboardKey
                 key={index}
-                u={key.u}
-                value={key.value}
+                unit={key.unit}
+                primary={key.primary}
                 // onKeyClick={() => props.onKeyClick(key.value)}
               />
             );

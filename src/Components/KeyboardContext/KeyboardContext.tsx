@@ -5,21 +5,27 @@ interface InitialKeyboardStateTypes {
   shift: boolean;
 }
 interface KeyboardContextTypes extends InitialKeyboardStateTypes {
-  updateCurrentOrganization: (organizationId: string) => void;
+  onWriteCharacter: (character: string) => void;
+  onModifyCharacter: () => void;
+  onDeleteCharacter: () => void;
 }
 
-const KeyboardContext = React.createContext({} as KeyboardContextTypes);
+const KeyboardContext = React.createContext({
+  message: "",
+  shift: false
+} as KeyboardContextTypes);
 
 const ContextProvider = ({ children }: any) => {
-  const [message, setMessage] = useState("");
-  const [shift, setShift] = useState(true); 
+  const { message: initialMessage, shift: initialShift } = useContext(KeyboardContext);
+  const [message, setMessage] = useState(initialMessage);
+  const [shift, setShift] = useState(initialShift); 
 
   const writeCharacter = (character: string) => {
     setMessage(message + character);
     setShift(false);
   };
 
-  const modifyCharacter = (character: string) => {
+  const modifyCharacter = () => {
     setShift(!shift);
   };
 
@@ -35,7 +41,7 @@ const ContextProvider = ({ children }: any) => {
   return (
     <KeyboardContext.Provider
       value={
-        { message, shift } as KeyboardContextTypes
+        { message, shift, onWriteCharacter: writeCharacter, onModifyCharacter: modifyCharacter, onDeleteCharacter: deleteCharacter } as KeyboardContextTypes
       }
     >
       {children}
