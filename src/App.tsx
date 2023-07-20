@@ -1,7 +1,7 @@
 // dependencies
-import React, { useRef, createContext, useContext, useState } from "react";
+import React, { useRef, createContext, useEffect } from "react";
 import { Container } from "@mui/material";
-import ContextProvider, { useKeyboardContext } from "Components/KeyboardContext/KeyboardContext";
+import { ContextProvider, useKeyboardContext } from "Components/KeyboardContext/KeyboardContext";
 
 // patterns
 import Keyboard from "Patterns/Keyboard/Keyboard";
@@ -16,16 +16,18 @@ const App = () => {
 
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const KeyboardContext = useKeyboardContext();
+  const {message} = useKeyboardContext();
+
+
   return (
     <ContextProvider>
-    <div className="app">
-      <Container>
-        <input className="input-field" type="text" value={KeyboardContext.message} ref={inputRef} />
-        <Keyboard />
+      <div className="app">
+        <Container>
+          <input className="input-field" type="text" defaultValue={message} ref={inputRef} />
+          <Keyboard />
 
-      </Container>
-    </div>
+        </Container>
+      </div>
     </ContextProvider>
   );
 };

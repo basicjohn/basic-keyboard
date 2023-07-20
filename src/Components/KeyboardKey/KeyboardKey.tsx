@@ -1,43 +1,20 @@
-import React, { useState } from 'react';
-import classNames from 'classnames';
-import styles from "./KeyboardKey.module.scss";
+import React, { useContext } from 'react';
+import { ContextProvider, useKeyboardContext } from '../KeyboardContext/KeyboardContext';
 
-interface KeyProps {
-  unit: number;
-  primary: string;
-  secondary?: string;
-  type?: "shift" | "space" | string;
-  // onKeyClick?: (primary: string) => void;
+interface KeyboardKeyProps {
+  value: string;
 }
 
-const Key = ({ unit, primary, secondary, type } : KeyProps) => {
-  const [isActive, setIsActive] = useState(false);
+function KeyboardKey({ value }: KeyboardKeyProps) {
+  const { onKeyPress } = useKeyboardContext();
 
-  const keyClasses = classNames(styles.key, styles[`key__${type}`], {
-    [styles['key--active']]: isActive,
-  });
-  
-
-  const handleMouseDown = () => {
-    // onKeyClick && onKeyClick(primary);
-    setIsActive(true);
-  }
-
-  const handleMouseUp = () => {
-    setIsActive(false);
-  }
+  const handleClick = () => {
+    onKeyPress(value);
+  };
 
   return (
-    <button 
-      style={{ width: `${unit * 4}em` }}
-      className={keyClasses}
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseUp}
-    >
-      <div>{primary}</div>
-    </button>
+    <button onClick={handleClick}>{value}</button>
   );
-};
+}
 
-export default Key;
+export default KeyboardKey;

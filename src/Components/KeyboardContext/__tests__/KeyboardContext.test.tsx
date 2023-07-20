@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import ContextProvider, { useKeyboardContext } from '../KeyboardContext';
+import { ContextProvider, useKeyboardContext } from '../KeyboardContext';
 
 describe('KeyboardContext', () => {
   const TestComponent = () => {
