@@ -39,8 +39,6 @@ export const ContextProvider = ({ children }: any) => {
 
   const handleKeyPress = (key: string) => {
     setMessage(message + key);
-    console.log(key);
-    console.log(message);
   };
 
   const handleKeyboardEvent = (character: string) => {

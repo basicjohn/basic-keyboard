@@ -8,7 +8,7 @@ import "./index.scss";
 
 // components
 import App from "./App";
-import { ContextProvider } from "Components/KeyboardContext/KeyboardContext";
+import { ContextProvider } from "data/KeyboardContext/KeyboardContext";
 
 
 const container = document.getElementById("root") as HTMLElement;

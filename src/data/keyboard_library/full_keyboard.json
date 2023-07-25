@@ -1,0 +1,75 @@
+[
+
+    [
+      { "primary": "`", "secondary": "~", "unit": 1 },
+      { "primary": "1", "secondary": "!", "unit": 1 },
+      { "primary": "2", "secondary": "@", "unit": 1 },
+      { "primary": "3", "secondary": "#", "unit": 1 },
+      { "primary": "4", "secondary": "$", "unit": 1 },
+      { "primary": "5", "secondary": "%", "unit": 1 },
+      { "primary": "6", "secondary": "^", "unit": 1 },
+      { "primary": "7", "secondary": "&", "unit": 1 },
+      { "primary": "8", "secondary": "*", "unit": 1 },
+      { "primary": "9", "secondary": "(", "unit": 1 },
+      { "primary": "0", "secondary": ")", "unit": 1 },
+      { "primary": "-", "secondary": "_", "unit": 1 },
+      { "primary": "=", "secondary": "+", "unit": 1 },
+      { "primary": "backspace", "secondary": "Q", "unit": 2 }
+    ],
+    [
+      { "primary": "tab", "secondary": "Q", "unit": 1.5 },
+      { "primary": "q", "secondary": "Q", "unit": 1 },
+      { "primary": "w", "secondary": "W", "unit": 1 },
+      { "primary": "e", "secondary": "E", "unit": 1 },
+      { "primary": "r", "secondary": "R", "unit": 1 },
+      { "primary": "t", "secondary": "T", "unit": 1 },
+      { "primary": "y", "secondary": "Y", "unit": 1 },
+      { "primary": "u", "secondary": "U", "unit": 1 },
+      { "primary": "i", "secondary": "I", "unit": 1 },
+      { "primary": "o", "secondary": "O", "unit": 1 },
+      { "primary": "p", "secondary": "P", "unit": 1 },
+      { "primary": "[", "secondary": "{", "unit": 1 },
+      { "primary": "]", "secondary": "}", "unit": 1 },
+      { "primary": "\\", "secondary": "|", "unit": 1.5 }
+    ],
+    [
+      { "primary": "caps lock", "secondary": "Q", "unit": 1.75 },
+      { "primary": "a", "secondary": "A", "unit": 1 },
+      { "primary": "s", "secondary": "S", "unit": 1 },
+      { "primary": "d", "secondary": "D", "unit": 1 },
+      { "primary": "f", "secondary": "F", "unit": 1 },
+      { "primary": "g", "secondary": "G", "unit": 1 },
+      { "primary": "h", "secondary": "H", "unit": 1 },
+      { "primary": "j", "secondary": "J", "unit": 1 },
+      { "primary": "k", "secondary": "K", "unit": 1 },
+      { "primary": "l", "secondary": "L", "unit": 1 },
+      { "primary": ";", "secondary": ":", "unit": 1 },
+      { "primary": "'", "secondary": "\"", "unit": 1 },
+      { "primary": "enter", "secondary": "Q", "unit": 2.25 }
+    ],
+    [
+      { "primary": "shift", "secondary": "Q", "unit": 2.25 },
+      { "primary": "z", "secondary": "Z", "unit": 1 },
+      { "primary": "x", "secondary": "X", "unit": 1 },
+      { "primary": "c", "secondary": "C", "unit": 1 },
+      { "primary": "v", "secondary": "V", "unit": 1 },
+      { "primary": "b", "secondary": "B", "unit": 1 },
+      { "primary": "n", "secondary": "N", "unit": 1 },
+      { "primary": "m", "secondary": "M", "unit": 1 },
+      { "primary": ",", "secondary": "<", "unit": 1 },
+      { "primary": ".", "secondary": ">", "unit": 1 },
+      { "primary": "/", "secondary": "?", "unit": 1 },
+      { "primary": "shift", "secondary": "Q", "unit": 2.75 }
+    ],
+    [
+      { "primary": "ctrl", "secondary": "Q", "unit": 1.25 },
+      { "primary": "fn", "secondary": "Q", "unit": 1.25 },
+      { "primary": "alt", "secondary": "Q", "unit": 1.25 },
+      { "primary": "cmd", "secondary": "Q", "unit": 1.25 },
+      { "primary": "space", "secondary": " ", "unit": 6.25 },
+      { "primary": "cmd", "secondary": "Q", "unit": 1.25 },
+      { "primary": "alt", "secondary": "Q", "unit": 1.25 },
+      { "primary": "ctrl", "secondary": "Q", "unit": 1.25 }
+    ]
+    
+  ]

@@ -5,6 +5,7 @@ const rootClass = "keyboard-row";
 
 interface key {
   primary: string;
+  unit: number;
 }
 
 interface KeyboardRowProps {
@@ -20,6 +21,7 @@ const KeyboardRow = ({width, keys}: KeyboardRowProps) => {
           <KeyboardKey
             key={index}
             value={key.primary}
+            unit={key.unit}
           />
         );
       })}

@@ -1,7 +1,7 @@
 // dependencies
 import React, { useRef, createContext, useEffect } from "react";
 import { Container } from "@mui/material";
-import {useKeyboardContext } from "Components/KeyboardContext/KeyboardContext";
+import {useKeyboardContext } from "data/KeyboardContext/KeyboardContext";
 
 // patterns
 import Keyboard from "Components/02-Organisms/00-Keyboard/00-Keyboard";
