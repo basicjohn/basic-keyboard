@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ContextProvider, useKeyboardContext } from '../KeyboardContext/KeyboardContext';
+import { ContextProvider, useKeyboardContext } from '../../KeyboardContext/KeyboardContext';
 
 interface KeyboardKeyProps {
   value: string;

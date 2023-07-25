@@ -4,7 +4,7 @@ import { Container } from "@mui/material";
 import { ContextProvider, useKeyboardContext } from "Components/KeyboardContext/KeyboardContext";
 
 // patterns
-import Keyboard from "Patterns/Keyboard/Keyboard";
+import Keyboard from "Components/02-Organisms/00-Keyboard/00-Keyboard";
 
 
 // styles
