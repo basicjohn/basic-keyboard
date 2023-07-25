@@ -1,21 +1,15 @@
 {
   "name": "basic-keyboard",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "@aws-amplify/api": "^5.0.28",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.13.4",
     "@types/classnames": "^2.3.1",
-    "@types/three": "^0.150.2",
-    "aws-amplify": "^5.2.4",
-    "aws-sdk": "^2.1389.0",
     "axios": "^1.4.0",
     "classnames": "^2.3.2",
-    "formik": "^2.4.1",
-    "history": "^5.3.0",
     "prettier": "^2.8.8",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
@@ -23,9 +17,7 @@
     "react-router-dom": "6.11.2",
     "react-scripts": "^5.0.1",
     "sass": "^1.62.1",
-    "three": "^0.151.3",
     "typescript": "^4.9.5",
-    "webfontloader": "^1.6.28",
     "yup": "^1.2.0"
   },
   "scripts": {
@@ -61,12 +53,9 @@
     "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.4",
-    "@types/react-helmet": "^6.1.6",
-    "@types/webfontloader": "^1.6.35",
     "@typescript-eslint/types": "5.59.8",
     "babel-jest": "^29.5.0",
     "eslint": "^8.42.0",
-    "intersection-observer": "^0.12.2",
     "jest": "^28.0.0"
   }
 }
