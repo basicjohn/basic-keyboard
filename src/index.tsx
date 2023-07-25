@@ -8,12 +8,15 @@ import "./index.scss";
 
 // components
 import App from "./App";
+import { ContextProvider } from "Components/KeyboardContext/KeyboardContext";
 
 
 const container = document.getElementById("root") as HTMLElement;
 ReactDOM.render(
   <Router>
-    <App />
+    <ContextProvider>
+      <App />
+    </ContextProvider>
   </Router>,
   container
 );

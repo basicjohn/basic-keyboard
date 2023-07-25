@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
-import { ContextProvider, useKeyboardContext } from '../../KeyboardContext/KeyboardContext';
+import {useKeyboardContext } from '../../KeyboardContext/KeyboardContext';
+import styles from './00-KeyboardKey.module.scss';
 
 interface KeyboardKeyProps {
   value: string;
 }
+
+const rootClass = "key";
 
 function KeyboardKey({ value }: KeyboardKeyProps) {
   const { onKeyPress } = useKeyboardContext();
@@ -13,7 +15,8 @@ function KeyboardKey({ value }: KeyboardKeyProps) {
   };
 
   return (
-    <button onClick={handleClick}>{value}</button>
+    <button className={styles[rootClass]}
+    onClick={handleClick}>{value}</button>
   );
 }
 
