@@ -24,7 +24,7 @@
       { "primary": "l", "secondary": "L", "unit": 1 }
     ],
     [
-      { "primary": "shift", "secondary": "Q", "unit": 2.25 },
+      { "primary": "shift", "secondary": "shift", "unit": 2.25 },
       { "primary": "z", "secondary": "Z", "unit": 1 },
       { "primary": "x", "secondary": "X", "unit": 1 },
       { "primary": "c", "secondary": "C", "unit": 1 },
@@ -32,7 +32,7 @@
       { "primary": "b", "secondary": "B", "unit": 1 },
       { "primary": "n", "secondary": "N", "unit": 1 },
       { "primary": "m", "secondary": "M", "unit": 1 },
-      { "primary": "backspace", "secondary": "Q", "unit": 2 }
+      { "primary": "delete", "secondary": "delete", "unit": 2 }
     ],
     [
       { "primary": "space", "secondary": " ", "unit": 6.25 }

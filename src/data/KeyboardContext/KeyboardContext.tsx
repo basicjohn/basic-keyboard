@@ -38,7 +38,18 @@ export const ContextProvider = ({ children }: any) => {
   };
 
   const handleKeyPress = (key: string) => {
-    setMessage(message + key);
+    if (key === "shift") {
+      modifyCharacter();
+      return;
+    } else if (key === "delete") {
+      deleteCharacter();
+      return;
+    } else if (key === "space") {
+      writeCharacter(" ");
+      return;
+    }
+    handleKeyboardEvent(key);
+
   };
 
   const handleKeyboardEvent = (character: string) => {
