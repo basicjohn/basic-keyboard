@@ -3,7 +3,6 @@ import React, { useContext, useState } from 'react';
 interface InitialKeyboardStateTypes {
   message: string;
   shift: boolean;
-  pressedKey: string | null;
 }
 interface KeyboardContextType extends InitialKeyboardStateTypes {
   onWriteCharacter: (character: string) => void;
@@ -15,14 +14,12 @@ interface KeyboardContextType extends InitialKeyboardStateTypes {
 const KeyboardContext = React.createContext({
   message: "",
   shift: false,
-  pressedKey: null
 } as KeyboardContextType);
 
 export const ContextProvider = ({ children }: any) => {
-  const { message: initialMessage, shift: initialShift, pressedKey: initialPressedKey } = useContext(KeyboardContext);
+  const { message: initialMessage, shift: initialShift } = useContext(KeyboardContext);
   const [message, setMessage] = useState(initialMessage);
   const [shift, setShift] = useState(initialShift);
-  const [pressedKey, setPressedKey] = useState(initialPressedKey);
 
   const writeCharacter = (character: string) => {
     setMessage(message + character);
@@ -49,7 +46,6 @@ export const ContextProvider = ({ children }: any) => {
       return;
     }
     handleKeyboardEvent(key);
-
   };
 
   const handleKeyboardEvent = (character: string) => {
@@ -59,7 +55,7 @@ export const ContextProvider = ({ children }: any) => {
   return (
     <KeyboardContext.Provider
       value={
-        { message, shift, pressedKey, onWriteCharacter: writeCharacter, onModifyCharacter: modifyCharacter, onDeleteCharacter: deleteCharacter, onKeyPress: handleKeyPress } as KeyboardContextType
+        { message, shift, onWriteCharacter: writeCharacter, onModifyCharacter: modifyCharacter, onDeleteCharacter: deleteCharacter, onKeyPress: handleKeyPress } as KeyboardContextType
       }
     >
       {children}
