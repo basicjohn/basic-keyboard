@@ -11,8 +11,12 @@ const App = () => {
 
   return (
     <Container className={styles["app"]}>
-      <input className={styles["input-field"]} type="text" value={message} />
-      <Keyboard />
+      <section className={styles["message"]}>
+        <input className={styles["input-field"]} type="text" value={message} />
+      </section>
+      <section className={styles["keyboard"]}>
+        <Keyboard />
+      </section>
     </Container>
   );
 };

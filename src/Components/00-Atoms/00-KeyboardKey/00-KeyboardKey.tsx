@@ -2,24 +2,25 @@ import {useKeyboardContext } from '../../../data/KeyboardContext/KeyboardContext
 import styles from './00-KeyboardKey.module.scss';
 
 interface KeyboardKeyProps {
-  value: string;
+  primary: string;
+  secondary: string;
   unit: number;
 }
 
 const rootClass = "key";
 
-function KeyboardKey({ value, unit }: KeyboardKeyProps) {
-  const { onKeyPress } = useKeyboardContext();
+function KeyboardKey({ primary, secondary, unit }: KeyboardKeyProps) {
+  const { onKeyPress, shift } = useKeyboardContext();
 
   const handleClick = () => {
-    onKeyPress(value);
+    shift === false ? onKeyPress(primary): onKeyPress(secondary);
   };
 
   return (
     <button className={styles[rootClass]}
-    onClick={handleClick}
-    style={{width: unit * 2 + "em"}}
-    >{value}</button>
+      onClick={handleClick}
+      style={{width: unit * 2 + "em"}}
+    >{shift === false ? primary: secondary}</button>
   );
 }
 

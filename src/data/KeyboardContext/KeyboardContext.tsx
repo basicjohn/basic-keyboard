@@ -45,11 +45,7 @@ export const ContextProvider = ({ children }: any) => {
       writeCharacter(" ");
       return;
     }
-    handleKeyboardEvent(key);
-  };
-
-  const handleKeyboardEvent = (character: string) => {
-    shift ? writeCharacter(character.toUpperCase()) : writeCharacter(character)
+    writeCharacter(key);
   };
 
   return (
